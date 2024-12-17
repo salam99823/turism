@@ -1,0 +1,29 @@
+body {
+  padding: 0% 5%;
+}
+
+header {
+  font-size: 1.3rem;
+  display: flex;
+  place-items: center;
+  width: 93%;
+  height: 10%;
+}
+
+header .main-icon {
+  width: 10%;
+}
+
+h1 {
+  font-family: Krona One;
+  color: #1741bb;
+
+  padding: 1rem;
+}
+
+nav a {
+  font-size: 1.5rem;
+  color: #43acfe;
+
+  padding: 1rem;
+}

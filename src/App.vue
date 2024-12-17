@@ -1,50 +1,38 @@
 <script setup>
-import { ref } from 'vue';
-import { RouterLink, RouterView } from "vue-router";
-import MainHeader from "./components/MainHeader.vue";
-import Category from "./components/Category.vue";
+import { ref } from "vue";
+import { RouterView, RouterLink } from "vue-router";
 const categories = ref([
   {
-    header: "Быстрая еда",
-    description: "...",
+    header: "Туры",
+    ref: "/tours",
   },
   {
-    header: "Рестораны",
-    description: "...",
+    header: "Куда сходить",
+    ref: "/ways",
   },
   {
-    header: "Музеи",
-    description: "...",
+    header: "Что посмотреть",
+    ref: "/places",
   },
   {
-    header: "Выставки",
-    description: "...",
+    header: "Где остановиться",
+    ref: "/stops",
   },
   {
-    header: "Мероприятия",
-    description: "...",
-  },
-  {
-    header: "Ночлег",
-    description: "...",
+    header: "Что поесть",
+    ref: "/food",
   },
 ]);
-
 </script>
 
 <template>
   <header>
-    <MainHeader />
+    <RouterLink to="/"><h1>TRAVEL</h1></RouterLink>
+    <nav>
+      <RouterLink v-for="category in categories" :to="category.ref">
+        {{ category.header }}
+      </RouterLink>
+    </nav>
   </header>
-
-  <Category
-    v-for="category in categories"
-    image="/favicon.ico"
-    :header="category.header"
-    :description="category.description"
-  />
-
   <RouterView />
 </template>
-
-<style scoped></style>
