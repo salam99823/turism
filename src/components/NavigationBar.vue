@@ -4,7 +4,7 @@ import { RouterLink } from "vue-router";
 
 const categories = ref([
   { header: "Туры", ref: "/tours" },
-  { header: "Куда сходить", ref: "/ways" },
+  { header: "Куда сходить", ref: "/cultural-centers" },
   { header: "Что посмотреть", ref: "/attractions" },
   { header: "Где остановиться", ref: "/hotels" },
   { header: "Что поесть", ref: "/cafe" },
@@ -24,6 +24,10 @@ const categories = ref([
 </template>
 
 <style scoped>
+nav {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 .nav-link {
   font-size: 1.4rem;
   color: var(--dark-blue);
