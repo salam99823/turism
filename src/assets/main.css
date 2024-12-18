@@ -1,35 +1,12 @@
+:root {
+  --primary-color: #1a43bf;
+  --dark-blue: #43acfe;
+  --blue: #ccebff;
+  --white: #ffffff;
+  --dark-purple: #8516cc;
+  --purple: #a351d9;
+  --bright-purple: #ffdeff;
+}
 body {
-  background-image: url("/background.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: top;
-  background-size: 93%;
-
-  padding: 0% 5%;
-}
-
-header {
-  font-size: 1.3rem;
-  display: flex;
-  place-items: center;
-  width: 93%;
-  height: 10%;
-}
-
-header .main-icon {
-  width: 10%;
-}
-
-h1 {
-  font-family: Krona One;
-  color: #1741bb;
-
-  padding: 1rem;
-}
-
-nav a {
-  font-size: 1.5rem;
-  color: #43acfe;
-
-  padding: 1rem;
+  font-family: "Krona One", sans-serif;
 }
