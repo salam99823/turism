@@ -1,3 +1,16 @@
+<template>
+  <nav class="navbar">
+    <RouterLink
+      v-for="(category, index) in categories"
+      :key="index"
+      :to="category.ref"
+      class="nav-link"
+    >
+      {{ category.header }}
+    </RouterLink>
+  </nav>
+</template>
+
 <script setup>
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
@@ -11,23 +24,12 @@ const categories = ref([
 ]);
 </script>
 
-<template>
-  <nav>
-    <RouterLink
-      v-for="category in categories"
-      :to="category.ref"
-      class="nav-link"
-    >
-      {{ category.header }}
-    </RouterLink>
-  </nav>
-</template>
-
 <style scoped>
-nav {
+.navbar {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+
 .nav-link {
   font-size: 1.4rem;
   color: var(--dark-blue);

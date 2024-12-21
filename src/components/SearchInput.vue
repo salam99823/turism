@@ -17,8 +17,8 @@
 
 .container input {
   background-color: inherit;
+  outline: none;
   border: none;
-  border-radius: 2rem;
   padding: 0;
   margin: 0;
   opacity: 0;

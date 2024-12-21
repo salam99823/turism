@@ -1,56 +1,35 @@
+<template>
+  <div class="card" :class="{ reverse: reverse }">
+    <img :src="image" alt="image" class="card-image" />
+
+    <div class="card-body">
+      <div class="card-header-wrapper">
+        <h3 class="card-title">
+          <a :href="link" target="_blank">{{ title }}</a>
+        </h3>
+        <div class="card-rating">{{ rating.toFixed(1) }}</div>
+        <img src="../assets/star.svg" alt="star" class="star" />
+      </div>
+      <slot />
+    </div>
+  </div>
+</template>
+
 <script setup>
+import { ref } from "vue";
 defineProps({
   _class: {
     type: String,
     default: "",
   },
-  id: {
-    type: String,
-    default: "",
-  },
-  href: {
-    type: String,
-    default: "",
-  },
-  image: {
-    type: String,
-    required: true,
-  },
-  header: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-    required: true,
-  },
-  rating: {
-    type: Number,
-    required: true,
-  },
-  right: {
+  reverse: {
     type: Boolean,
     default: false,
   },
 });
-</script>
 
-<template>
-  <div class="card" :id="id" :class="(right ? 'right' : 'left') + ' ' + _class">
-    <img class="card-img" :src="image" alt="image" />
-    <div class="card-body">
-      <div class="card-header">
-        <h3 class="card-header">
-          <a :href="href">{{ header }}</a>
-        </h3>
-        <div class="rating">
-          {{ rating }} <img src="../assets/star.svg" alt="star" class="star" />
-        </div>
-      </div>
-      <p>{{ description }}</p>
-    </div>
-  </div>
-</template>
+const rating = ref(5);
+</script>
 
 <style scoped>
 .card {
@@ -61,7 +40,7 @@ defineProps({
   border-radius: 2.18rem;
 }
 
-.right.card {
+.reverse.card {
   flex-direction: row-reverse;
 }
 
@@ -85,7 +64,7 @@ defineProps({
   color: inherit;
 }
 
-.rating {
+.card-rating {
   justify-self: right;
   display: flex;
   align-items: center;

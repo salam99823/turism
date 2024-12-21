@@ -1,15 +1,3 @@
-<script setup>
-import { ref } from "vue";
-import { RouterView } from "vue-router";
-
-import Logo from "./components/icons/Logo.vue";
-import SearchInput from "./components/SearchInput.vue";
-import NavigationBar from "./components/NavigationBar.vue";
-function teleportToSearchBar() {
-  this.$refs.searchBar.focus();
-}
-</script>
-
 <template>
   <header>
     <Logo />
@@ -18,6 +6,15 @@ function teleportToSearchBar() {
   </header>
   <RouterView />
 </template>
+
+<script setup>
+import { ref } from "vue";
+import { RouterView } from "vue-router";
+
+import Logo from "./components/icons/Logo.vue";
+import SearchInput from "./components/SearchInput.vue";
+import NavigationBar from "./components/NavigationBar.vue";
+</script>
 
 <style scoped>
 header {

@@ -1,11 +1,18 @@
-import './assets/main.css'
+import "./assets/main.css";
 
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from "vue";
+import { createYmaps } from "vue-yandex-maps";
 
-const app = createApp(App)
+import App from "./App.vue";
+import router from "./router";
 
-app.use(router)
+const app = createApp(App);
 
-app.mount('#app')
+const ymaps = createYmaps({
+  apikey: import.meta.env.VITE_YANDEX_API,
+});
+
+app.use(router);
+app.use(ymaps);
+
+app.mount("#app");
